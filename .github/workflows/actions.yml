@@ -2,46 +2,40 @@ name: run main.py
 
 on:
   schedule:
-    - cron: '*/5 * * * *' # Runs every 5 minutes
-
-permissions:
-  contents: write  # Grants write access to repository contents
+    - cron: '*/5 * * * *' # At 00:00 on Monday
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
 
-      - name: Checkout repository content
-        uses: actions/checkout@v3
-        with:
-          persist-credentials: false  # Ensures the push action uses a separate token
-          fetch-depth: 0
+      - name: checkout repo content
+        uses: actions/checkout@v2 # checkout the repository content to github runner
 
-      - name: Setup Python
+      - name: setup python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.9'  # Specify the Python version
-
-      - name: Install Python packages
+          python-version: '3.9' # install the python version needed
+          
+      - name: install python packages
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-
-      - name: Execute Python script
+          
+      - name: execute py script # run main.py
         env:
           SOME_SECRET: ${{ secrets.SOME_SECRET }}
         run: python main.py
-
-      - name: Commit files
+          
+      - name: commit files
         run: |
-          git config --local user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git config --local user.name "github-actions[bot]"
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
           git add -A
-          git diff-index --quiet HEAD || git commit -m "Updated logs" --allow-empty
-
-      - name: Push changes
-        uses: ad-m/github-push-action@v0.6.0  # Use a specific version
+          git diff-index --quiet HEAD || (git commit -a -m "updated logs" --allow-empty)
+          
+      - name: push changes
+        uses: ad-m/github-push-action@v0.6.0
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}  # Or use PAT_TOKEN if necessary
-          branch: main
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          branch: main 
