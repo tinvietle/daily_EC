@@ -1,4 +1,19 @@
 2024-10-12 16:22:40,928 - __main__ - INFO - Token value: Token not available!
+<<<<<<< HEAD
 2024-10-12 20:25:42,432 - __main__ - INFO - Token value: Token not available!
 2024-10-12 20:26:08,317 - __main__ - INFO - Token value: Token not available!
 2024-10-12 20:38:41,761 - __main__ - INFO - Data successfully saved to EC\2024-10-04.csv
+=======
+2024-10-12 15:27:24,590 - __main__ - INFO - Token value: 1234
+2024-10-12 15:36:38,374 - __main__ - INFO - Token value: 1234
+2024-10-12 15:44:37,109 - __main__ - INFO - Token value: 1234
+2024-10-12 15:53:01,069 - __main__ - INFO - Token value: 1234
+2024-10-12 16:07:49,619 - __main__ - INFO - Token value: 1234
+2024-10-12 16:31:18,070 - __main__ - INFO - Token value: 1234
+2024-10-12 16:45:24,276 - __main__ - INFO - Token value: 1234
+2024-10-12 16:53:37,741 - __main__ - INFO - Token value: 1234
+2024-10-12 17:07:18,389 - __main__ - INFO - Token value: 1234
+2024-10-12 17:25:02,054 - __main__ - INFO - Token value: 1234
+2024-10-12 17:34:18,209 - __main__ - INFO - Token value: 1234
+2024-10-12 17:42:21,556 - __main__ - INFO - Token value: 1234
+>>>>>>> f1a000576b9bd2965310bdd35500e0970505c3a5
